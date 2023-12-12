@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "user",
+    "food",
     'rest_framework',
     'corsheaders',
 
@@ -86,7 +87,7 @@ WSGI_APPLICATION = "backend.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "IMS",
+        "NAME": "ims",
         "HOST":"localhost",
         "PORT":"5432",
         "USER":"postgres",
