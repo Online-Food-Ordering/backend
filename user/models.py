@@ -34,5 +34,10 @@ class AppUser(AbstractBaseUser, PermissionsMixin):
 	USERNAME_FIELD = 'email'
 	REQUIRED_FIELDS = ['username']
 	objects = AppUserManager()
+
 	def __str__(self):
 		return self.username
+
+	@property
+	def is_staff(self):
+		return self.is_superuser
