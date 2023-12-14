@@ -1,18 +1,9 @@
-from django.shortcuts import render
-from rest_framework import generics
+from rest_framework import viewsets
 
 from food.models import Food
 from food.serializers import FoodSerializer
 
 
-# Create your views here.
-
-
-class FoodList(generics.ListCreateAPIView):
-    queryset = Food.objects.all()
-    serializer_class = FoodSerializer
-
-
-class FoodDetail(generics.RetrieveUpdateDestroyAPIView):
+class FoodViewSet(viewsets.ModelViewSet):
     queryset = Food.objects.all()
     serializer_class = FoodSerializer

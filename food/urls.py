@@ -1,8 +1,8 @@
-from django.urls import path
+from rest_framework.routers import SimpleRouter
 
-from food.views import FoodList, FoodDetail
+from food.views import FoodViewSet
 
-urlpatterns = [
-    path('<int:pk>/', FoodDetail.as_view()),
-    path('', FoodList.as_view())
-]
+router = SimpleRouter()
+router.register('', FoodViewSet, basename='foods')
+
+urlpatterns = router.urls
