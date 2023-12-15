@@ -14,6 +14,9 @@ class Order(models.Model):
 
 class OrderItem(models.Model):
     food = models.ForeignKey(Food, on_delete=models.CASCADE)
-    order = models.ForeignKey(Order, on_delete=models.CASCADE)
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='order_items')
     quantity = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return str(self.quantity) + ' * ' + str(self.food)
