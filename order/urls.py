@@ -6,5 +6,6 @@ from order.views import OrderViewSet
 
 router = SimpleRouter()
 router.register('', OrderViewSet, basename='orders')
+# router.register('', OrderItemViewSet, basename='order_items')
 
 urlpatterns = router.urls

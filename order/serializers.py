@@ -13,3 +13,11 @@ class OrderItemSerializer(serializers.ModelSerializer):
     class Meta:
         fields = ('id', 'food', 'order', 'quantity')
         model = OrderItem
+
+
+class OrderWithItemsSerializer(serializers.ModelSerializer):
+    order_items = OrderItemSerializer
+
+    class Meta:
+        fields = ('id', 'order_status', 'total', 'order_items')
+        model = Order
