@@ -23,7 +23,8 @@ class UserRegister(APIView):
                     return Response(serializer.data, status=status.HTTP_201_CREATED)
         except ValidationError as e:
             return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
-
+def register_view(request):
+    return render(request, 'auth/register.html')
 
 class UserLogin(APIView):
 	permission_classes = (permissions.AllowAny,)
